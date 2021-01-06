@@ -12,8 +12,6 @@ import { COLORS, FONTS, SIZES, images } from '../constants';
 import Icon from 'react-native-vector-icons/Ionicons';
 
 const YourNextEscape = ({ selectedList }) => {
-  console.log(selectedList && selectedList, 'child');
-
   const renderItem = ({ item }) => {
     return (
       <ScrollView style={{ marginVertical: SIZES.base }}>
@@ -31,7 +29,8 @@ const YourNextEscape = ({ selectedList }) => {
             <Text
               style={{
                 paddingRight: SIZES.padding,
-                ...FONTS.h2,
+                // fontFamily: Montserrat,
+                fontSize: SIZES.h2,
                 color: COLORS.black,
                 height: 35,
               }}>
@@ -39,7 +38,8 @@ const YourNextEscape = ({ selectedList }) => {
             </Text>
             <Text
               style={{
-                ...FONTS.h3,
+                // fontFamily: Montserrat,
+                fontSize: SIZES.h3,
                 marginBottom: 13,
                 color: COLORS.lightGray,
               }}>

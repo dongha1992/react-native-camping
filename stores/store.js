@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
-import selectedIdReducer from '../reducers/selectedIdReducer';
+import MapReducer from '../reducers/MapReducer';
 
 export default combineReducers({
-  selectedIdReducer,
+  MapReducer,
 });

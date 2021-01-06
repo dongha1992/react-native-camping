@@ -1,4 +1,5 @@
 import { Dimensions } from 'react-native';
+import { useFonts } from 'expo-font';
 const { width, height } = Dimensions.get('window');
 
 const tintColor = '#2f95dc';
@@ -7,7 +8,7 @@ export const COLORS = {
   // base colors
   primary: '#F96D41',
   secondary: '#25282F',
-  themeColor: '#e88a38',
+  themeColor: '#FF7657',
   themeColor2: '#edaf6d',
   // colors
   black: '#1E1B26',
@@ -61,31 +62,26 @@ export const SIZES = {
 
 export const FONTS = {
   largeTitle: {
-    fontFamily: 'Montserrat-regular',
     fontSize: SIZES.largeTitle,
     lineHeight: 55,
   },
-  h1: { fontFamily: 'Montserrat-Black', fontSize: SIZES.h1, lineHeight: 36 },
-  h2: { fontFamily: 'Montserrat-Bold', fontSize: SIZES.h2, lineHeight: 30 },
-  h3: { fontFamily: 'Montserrat-Bold', fontSize: SIZES.h3, lineHeight: 22 },
-  h4: { fontFamily: 'Montserrat-Bold', fontSize: SIZES.h4, lineHeight: 22 },
+  h1: { fontSize: SIZES.h1, lineHeight: 36 },
+  h2: { fontSize: SIZES.h2, lineHeight: 30 },
+  h3: { fontSize: SIZES.h3, lineHeight: 22 },
+  h4: { fontSize: SIZES.h4, lineHeight: 22 },
   body1: {
-    fontFamily: 'Montserrat-Regular',
     fontSize: SIZES.body1,
     lineHeight: 36,
   },
   body2: {
-    fontFamily: 'Montserrat-Regular',
     fontSize: SIZES.body2,
     lineHeight: 30,
   },
   body3: {
-    fontFamily: 'Montserrat-Regular',
     fontSize: SIZES.body3,
     lineHeight: 22,
   },
   body4: {
-    fontFamily: 'Montserrat-Regular',
     fontSize: SIZES.body4,
     lineHeight: 20,
   },

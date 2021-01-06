@@ -5,6 +5,8 @@ import YourNextEscape from './YourNextEscape';
 import YourNextEscapeTab from './YourNextEscapeTab';
 import MapContainer from './MapContainer';
 import MapHeader from './MapHeader';
+import MapHeaderTab from './MapHeaderTab';
+import CampingList from './CampingList';
 
 export {
   Category,
@@ -14,4 +16,6 @@ export {
   YourNextEscapeTab,
   MapContainer,
   MapHeader,
+  MapHeaderTab,
+  CampingList,
 };

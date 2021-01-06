@@ -8,7 +8,7 @@ import {
   ScrollView,
   FlatList,
 } from 'react-native';
-import { COLORS, FONTS, SIZES, images } from '../constants';
+import { COLORS, SIZES, images } from '../constants';
 import Icon from 'react-native-vector-icons/Ionicons';
 import { useDispatch, useSelector } from 'react-redux';
 import { setSelectedId } from '../actions/action';
@@ -22,12 +22,22 @@ const YourNextEscapeTab = ({ CATEGORY_TAB_LIST, selectedTab }) => {
         style={{ flex: 1, marginRight: SIZES.padding }}
         onPress={() => dispatch(setSelectedId(item.id))}>
         {selectedTab == item.id && (
-          <Text style={{ ...FONTS.h2, color: COLORS.themeColor }}>
+          <Text
+            style={{
+              // fontFamily: Montserrat,
+              fontSize: SIZES.h2,
+              color: COLORS.themeColor,
+            }}>
             {item.categoryName}
           </Text>
         )}
         {selectedTab != item.id && (
-          <Text style={{ ...FONTS.h2, color: COLORS.lightGray3 }}>
+          <Text
+            style={{
+              // fontFamily: Montserrat,
+              fontSize: SIZES.h2,
+              color: COLORS.lightGray3,
+            }}>
             {item.categoryName}
           </Text>
         )}

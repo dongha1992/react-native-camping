@@ -91,17 +91,14 @@ const CATEGORY_TAB_LIST = [
 
 const Home = () => {
   const [user, setUser] = useState(profileData);
-
   const [selectedList, setSelectedList] = useState([]);
-
   const dispatch = useDispatch();
-  const selectedId = useSelector((id) => id.selectedIdReducer);
+  const selectedId = useSelector((id) => id.MapReducer);
 
   useEffect(() => {
     const selectedNewList = CATEGORY_TAB_LIST.find(
       (el) => el.id == selectedId.id
     );
-    console.log(selectedNewList);
     setSelectedList(selectedNewList);
   }, [selectedId]);
 
