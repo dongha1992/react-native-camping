@@ -2,6 +2,7 @@ import { SELECTED_ID } from './types';
 import { SELECTED_TAP_TYPE } from './types';
 import { BOOKMARK_LIST } from './types';
 import { DELETE_BOOKMARK_LIST } from './types';
+import { CLICK_MARKER } from './types';
 
 export const setSelectedId = (id) => {
   return {
@@ -28,5 +29,12 @@ export const setDeletedList = (list) => {
   return {
     type: DELETE_BOOKMARK_LIST,
     payload: list,
+  };
+};
+
+export const setClickedMarker = (marker) => {
+  return {
+    type: DELETE_BOOKMARK_LIST,
+    payload: marker,
   };
 };

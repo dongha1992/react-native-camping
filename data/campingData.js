@@ -102,7 +102,7 @@ const campingData = [
     description: 'This is for all sunset lovers.',
     rating: 4.1,
     distance: 4.3,
-    price: '1000',
+    price: '2000',
     image:
       'https://images.unsplash.com/photo-1536672717034-228c25f24a96?ixid=MXwxMjA3fDB8MHxzZWFyY2h8N3x8dGVudHxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60',
     latlng: {
@@ -134,7 +134,7 @@ const campingData = [
     description: 'This is for all sunset lovers.',
     rating: 2.9,
     distance: 5.9,
-    price: '50000',
+    price: '60000',
     image:
       'https://images.unsplash.com/photo-1493713838217-28e23b41b798?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80',
     latlng: {
@@ -156,6 +156,22 @@ const campingData = [
     latlng: {
       latitude: 37.52131,
       longitude: 127.05475,
+    },
+    bookmarked: false,
+  },
+  {
+    id: 11,
+    type: 'tent',
+    name: '그냥 텐트',
+    description: 'This is for all sunset lovers.',
+    rating: 5.0,
+    distance: 12.9,
+    price: 'Free',
+    image:
+      'https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80',
+    latlng: {
+      latitude: 37.51437,
+      longitude: 127.04475,
     },
     bookmarked: false,
   },

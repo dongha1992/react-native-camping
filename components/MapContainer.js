@@ -4,7 +4,7 @@ import { Ionicons, Foundation, FontAwesome } from '@expo/vector-icons';
 import { useDispatch, useSelector } from 'react-redux';
 import { PROVIDER_GOOGLE } from 'react-native-maps';
 import MapView from 'react-native-maps';
-import { setMapList } from '../actions/action';
+import { setClickedMarker } from '../actions/action';
 import { COLORS, FONTS, SIZES } from '../constants';
 import CampingList from './CampingList';
 import * as Icon from 'react-native-vector-icons';
@@ -59,7 +59,7 @@ const MapContainer = ({ campingData }) => {
               key={`marker-${marker.id}`}
               coordinate={marker.latlng}
               onPress={() => {
-                console.log('Dd');
+                useDispatch(setClickedMarker(marker));
               }}
               description={marker.name}>
               {campingMarker(marker)}
