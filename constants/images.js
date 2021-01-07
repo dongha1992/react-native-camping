@@ -4,6 +4,7 @@ export const campMountainIllustraiton = require('../assets/images/camp_mountain_
 export const campForestIllustration = require('../assets/images/camp_forest.jpg');
 export const campTogetherIllustration = require('../assets/images/camp_together_illu.jpg');
 export const campIntothewildIllustration = require('../assets/images/intothewild.jpg');
+export const mainImage = require('../assets/images/main.jpg');
 
 export const campSeoulIllustraiton = require('../assets/images/seoul.jpeg');
 export const campBusanIllustraiton = require('../assets/images/busan.jpeg');
@@ -25,4 +26,5 @@ export default {
   campTogetherIllustration,
   campAnywhereIllustration,
   campIntothewildIllustration,
+  mainImage,
 };

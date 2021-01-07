@@ -1,5 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import { StyleSheet, Text, View, Dimensions, Image } from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  View,
+  Dimensions,
+  TouchableHighlight,
+  Image,
+  Modal,
+} from 'react-native';
 import { Ionicons, Foundation, FontAwesome } from '@expo/vector-icons';
 import { useDispatch, useSelector } from 'react-redux';
 import { PROVIDER_GOOGLE } from 'react-native-maps';
@@ -12,8 +20,12 @@ import * as Icon from 'react-native-vector-icons';
 const { width, height } = Dimensions.get('window');
 const { Marker } = MapView;
 
+const information = ['Phone', 'Address', 'Cooking'];
+
 const MapContainer = ({ campingData }) => {
   const [campings, setCampings] = useState([]);
+  const [modalVisible, setModalVisible] = useState(false);
+  const [markered, setMarkered] = useState('');
   const { filters } = useSelector((filter) => filter.MapReducer);
 
   const filteredList =
@@ -42,7 +54,10 @@ const MapContainer = ({ campingData }) => {
   };
 
   return (
-    <View style={{ flex: 1 }}>
+    <View
+      style={{
+        flex: 1,
+      }}>
       <MapView
         provider={PROVIDER_GOOGLE}
         style={{ flex: 1, height: height * 0.5, width }}
@@ -59,18 +74,60 @@ const MapContainer = ({ campingData }) => {
               key={`marker-${marker.id}`}
               coordinate={marker.latlng}
               onPress={() => {
-                useDispatch(setClickedMarker(marker));
+                setModalVisible(true);
+                setMarkered(marker);
               }}
               description={marker.name}>
               {campingMarker(marker)}
               <View style={styles.textWrap}>
-                <Text style={styles.text}>{marker.price}</Text>
+                <Text style={styles.text}>
+                  {marker.price === 'Free'
+                    ? 'Free'
+                    : Number(marker.price).toLocaleString(2)}
+                </Text>
               </View>
             </Marker>
           );
         })}
       </MapView>
-      <CampingList campingData={filteredList} />
+      <View style={styles.centeredView}>
+        <Modal
+          animationType='slide'
+          transparent={true}
+          visible={modalVisible}
+          onRequestClose={() => {
+            Alert.alert('Modal has been closed.');
+          }}>
+          <View style={styles.centeredView}>
+            <View style={styles.modalView}>
+              <Text style={styles.modalTitle}>{markered.name}</Text>
+              <View
+                style={{
+                  flex: 1,
+                }}>
+                <Text style={styles.modalText}>Phone : {markered.phone}</Text>
+                <Text style={styles.modalText}>
+                  Address: {markered.address}
+                </Text>
+                <Text style={styles.modalText}>
+                  Cooking : {markered.cooking}
+                </Text>
+              </View>
+              <TouchableHighlight
+                style={{
+                  ...styles.openButton,
+                  backgroundColor: COLORS.themeColor2,
+                }}
+                onPress={() => {
+                  setModalVisible(!modalVisible);
+                }}>
+                <Text style={styles.textStyle}>Close</Text>
+              </TouchableHighlight>
+            </View>
+          </View>
+        </Modal>
+        <CampingList campingData={filteredList} />
+      </View>
     </View>
   );
 };
@@ -102,5 +159,46 @@ const styles = StyleSheet.create({
   text: {
     fontSize: 14,
     fontWeight: '500',
+  },
+
+  centeredView: {},
+  modalView: {
+    width: 240,
+    height: 200,
+    margin: 280,
+    backgroundColor: 'white',
+    borderRadius: 20,
+    padding: 10,
+    right: 180,
+    alignItems: 'center',
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 10,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    elevation: 5,
+  },
+  openButton: {
+    backgroundColor: COLORS.themeColor2,
+    borderRadius: 20,
+    padding: 7,
+    elevation: 2,
+  },
+  textStyle: {
+    color: 'white',
+    fontWeight: 'bold',
+    textAlign: 'center',
+  },
+  modalTitle: {
+    marginTop: 5,
+    marginBottom: 10,
+    fontWeight: 'bold',
+    fontSize: 18,
+  },
+  modalText: {
+    marginTop: 5,
+    marginBottom: 15,
   },
 });

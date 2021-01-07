@@ -20,9 +20,10 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { COLORS, FONTS, SIZES, images } from '../constants';
 import { useDispatch, useSelector } from 'react-redux';
+import AsyncStorage from '@react-native-community/async-storage';
 
 const profileData = {
-  name: 'Dongha Kim',
+  name: 'Dongha Taylor Kim',
   point: 200,
 };
 
@@ -120,6 +121,7 @@ const CATEGORY_TAB_LIST = [
 const Home = () => {
   const [user, setUser] = useState(profileData);
   const [selectedList, setSelectedList] = useState([]);
+  const [image, setImage] = useState('');
   const dispatch = useDispatch();
   const selectedId = useSelector((id) => id.MapReducer);
 
@@ -130,12 +132,28 @@ const Home = () => {
     setSelectedList(selectedNewList);
   }, [selectedId]);
 
+  useEffect(() => {
+    getData();
+  }, []);
+
+  const getData = async () => {
+    try {
+      const url = await AsyncStorage.getItem('image');
+      if (url !== null) {
+        setImage(url);
+        console.log('success');
+      }
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
   return (
     <ScrollView>
       <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.white }}>
         {/* Header */}
         <View style={{ height: 200 }}>
-          <UserInfo user={user} />
+          <UserInfo user={user} userImage={image} />
           <UserSelectButton />
         </View>
         {/* Body */}

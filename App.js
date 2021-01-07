@@ -3,7 +3,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createStackNavigator } from '@react-navigation/stack';
-import { Home, Detail, Bookmark } from './screens';
+import { Home, Detail, Bookmark, Login } from './screens';
 import Filter from './screens/Filter';
 import Icon from 'react-native-vector-icons/Ionicons';
 import { Provider } from 'react-redux';
@@ -34,8 +34,9 @@ const App = () => {
           screenOptions={{
             headerShown: false,
           }}
-          initialRouteName={'Home'}>
+          initialRouteName={'Login'}>
           <Stack.Screen name='Home' component={ScreenNavigator} />
+          <Stack.Screen name='Login' component={Login} />
         </Stack.Navigator>
       </NavigationContainer>
     </Provider>
