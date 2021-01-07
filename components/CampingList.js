@@ -46,11 +46,21 @@ const CampingList = ({ campingData }) => {
     setList(editList);
   };
 
-  console.log(filters, 'fffff');
+  const filterPriceList =
+    filters.price === 'Free'
+      ? lists.filter((list) => list.price === filters.price)
+      : lists.filter((list) => Number(list.price) <= Number(filters.price));
+
+  const filterSortList =
+    filters.sort === 'rating'
+      ? filterPriceList.sort((a, b) => b.rating - a.rating)
+      : filterPriceList.sort((a, b) => a[filters.sort] - b[filters.sort]);
+
+  console.log(filterSortList);
 
   return (
     <View style={{ flex: 1 }}>
-      {lists.map((list) => {
+      {filterSortList.map((list) => {
         return (
           <CampingLists
             key={list.id}
@@ -67,89 +77,3 @@ const CampingList = ({ campingData }) => {
 };
 
 export default CampingList;
-
-// const campingLists = campingData.map((list) => {
-//   return (
-//     <View
-//       style={{
-//         flex: 1,
-//         flexDirection: 'row',
-//         padding: 20,
-//         borderBottomWidth: 0.5,
-//         borderBottomColor: '#A5A5A5',
-//       }}>
-//       <View style={{ flex: 1 }}>
-//         <Image
-//           style={{ width: 150, height: 150, borderRadius: 10 }}
-//           source={{ uri: list.image }}
-//         />
-//       </View>
-//       <View
-//         style={{
-//           flex: 1.2,
-//           flexDirection: 'column',
-//           justifyContent: 'space-around',
-//           paddingLeft: 10,
-//         }}>
-//         <Text style={{ fontSize: 20, fontWeight: 'bold' }}>{list.name}</Text>
-//         <Text style={{ color: COLORS.lightGray4 }}>{list.description}</Text>
-//         <View
-//           style={{
-//             flexDirection: 'row',
-//           }}>
-//           <View
-//             style={{
-//               flex: 0.3,
-//               flexDirection: 'row',
-//               alignItems: 'center',
-//             }}>
-//             <Icon name='star' color={COLORS.themeColor2}></Icon>
-//             <Text style={{ marginLeft: 4, color: COLORS.themeColor2 }}>
-//               {list.rating}
-//             </Text>
-//           </View>
-//           <View
-//             style={{
-//               flex: 0.3,
-//               flexDirection: 'row',
-//               alignItems: 'center',
-//             }}>
-//             <Icon name='trail-sign' color={COLORS.themeColor}></Icon>
-//             <Text style={{ marginLeft: 4, color: COLORS.themeColor }}>
-//               {list.distance}
-//             </Text>
-//           </View>
-//           <View
-//             style={{
-//               flex: 0.4,
-//               flexDirection: 'row',
-//               alignItems: 'center',
-//             }}>
-//             <Icon name='md-pricetag' color={COLORS.black}></Icon>
-//             <Text style={{ marginLeft: 4, color: COLORS.black }}>
-//               {list.price}
-//             </Text>
-//           </View>
-//         </View>
-//       </View>
-//       <View
-//         style={{
-//           flex: 0.2,
-//           justifyContent: 'center',
-//           alignItems: 'center',
-//         }}>
-//         <Icon
-//           name={isHeart.id === list.id && isHeart ? 'heart' : 'heart-outline'}
-//           size={24}
-//           color={isHeart.id === list.id && isHeart ? 'red' : 'black'}
-//           onPress={() => {
-//             dispatch(
-//               setBookmarkList(campingData.find((el) => el.id === list.id))
-//             );
-//             setIsHeart({ status: !isHeart, id: list.id });
-//           }}
-//         />
-//       </View>
-//     </View>
-//   );
-// });

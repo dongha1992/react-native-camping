@@ -21,6 +21,22 @@ const CATEGORY_LIST = [
     url: images.campMountainIllustraiton,
     title: 'Mountaing is calling you',
   },
+  {
+    url: images.campTogetherIllustration,
+    title: 'Camping together',
+  },
+  {
+    url: images.campForestIllustration,
+    title: 'In forest',
+  },
+  {
+    url: images.campTogetherIllustration,
+    title: 'Camping together',
+  },
+  {
+    url: images.campIntothewildIllustration,
+    title: 'Into The Wild',
+  },
 ];
 
 const renderItem = ({ item, index }) => {

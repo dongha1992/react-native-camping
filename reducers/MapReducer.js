@@ -2,14 +2,15 @@ import { SELECTED_ID } from '../actions/types';
 import { SELECTED_TAP_TYPE } from '../actions/types';
 import { BOOKMARK_LIST } from '../actions/types';
 import { DELETE_BOOKMARK_LIST } from '../actions/types';
+import { CLICK_MARKER } from '../actions/types';
 
 const initialState = {
   bookmarkList: [],
   id: 1,
   filters: {
-    sort: 'distance',
+    sort: 'Distance',
     type: 'all',
-    price: 'free',
+    price: '500000',
   },
   bookmarkedId: null,
 };
@@ -37,6 +38,12 @@ const MapReducer = (state = initialState, action) => {
       };
 
     case DELETE_BOOKMARK_LIST:
+      return {
+        ...state,
+        bookmarkList: action.payload,
+      };
+
+    case CLICK_MARKER:
       return {
         ...state,
         bookmarkList: action.payload,

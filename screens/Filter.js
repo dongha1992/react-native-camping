@@ -18,8 +18,8 @@ import { useDispatch, useSelector } from 'react-redux';
 
 const SORT_BY = [
   { title: 'Distance', id: 1, name: 'distance' },
-  { title: 'Ratings', id: 2, name: 'ratings' },
-  { title: 'Reviews', id: 3, name: 'reviews' },
+  { title: 'Ratings', id: 2, name: 'rating' },
+  { title: 'Price', id: 3, name: 'price' },
 ];
 const TYPE = [
   { title: 'All', id: 1, name: 'all' },
@@ -27,7 +27,7 @@ const TYPE = [
   { title: 'RV Camping', id: 3, name: 'rv' },
 ];
 const PRICE = [
-  { title: 'Free', id: 1, name: 'free' },
+  { title: 'Free', id: 1, name: 'Free' },
   { title: '~10,000', id: 2, name: '10000' },
   { title: '~50,000', id: 3, name: '50000' },
   { title: '100,000', id: 4, name: '100000' },
@@ -46,8 +46,7 @@ const Filter = ({ navigation }) => {
   const { filters } = useSelector((filter) => filter.MapReducer);
 
   const onChangeButtonHandler = (id, title) => {
-    
-    if (title === 'Distance' || title === 'Ratings' || title === 'Reviews') {
+    if (title === 'Distance' || title === 'Ratings' || title === 'Price') {
       setSelectedButton1(id);
     }
     if (title === 'All' || title === 'Tenting' || title === 'RV Camping') {

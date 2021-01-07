@@ -38,28 +38,6 @@ const App = () => {
           <Stack.Screen name='Home' component={ScreenNavigator} />
         </Stack.Navigator>
       </NavigationContainer>
-
-      {/* <NavigationContainer>
-      <Tab.Navigator
-        tabBarOptions={tabOptions}
-        screenOptions={({ route }) => ({
-          tabBarIcon: ({ focused, color, size }) => {
-            let iconName;
-            if (route.name === 'Home') {
-              iconName = focused ? 'home' : 'home-outline';
-            } else if (route.name === 'Detail') {
-              iconName = focused ? 'map' : 'map-outline';
-            } else if (route.name === 'Bookmark') {
-              iconName = focused ? 'heart-sharp' : 'heart-half-sharp';
-            }
-            return <Icon name={iconName} size={size} color={color} />;
-          },
-        })}>
-        <Tab.Screen name='Home' component={Home} />
-        <Tab.Screen name='Detail' component={Detail} />
-        <Tab.Screen name='Bookmark' component={Bookmark} />
-      </Tab.Navigator>
-    </NavigationContainer> */}
     </Provider>
   );
 };

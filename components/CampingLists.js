@@ -37,7 +37,7 @@ const CampingLists = ({ list, onPress, bookmark }) => {
       </View>
       <View
         style={{
-          flex: 1.2,
+          flex: 1.3,
           flexDirection: 'column',
           justifyContent: 'space-around',
           paddingLeft: 10,
@@ -50,35 +50,53 @@ const CampingLists = ({ list, onPress, bookmark }) => {
           }}>
           <View
             style={{
-              flex: 0.3,
+              flex: 0.7,
               flexDirection: 'row',
               alignItems: 'center',
             }}>
             <Icon name='star' color={COLORS.themeColor2}></Icon>
-            <Text style={{ marginLeft: 4, color: COLORS.themeColor2 }}>
+            <Text
+              style={{
+                marginLeft: 4,
+                color: COLORS.themeColor2,
+                fontWeight: 'bold',
+              }}>
               {list.rating}
             </Text>
           </View>
           <View
             style={{
-              flex: 0.4,
+              flex: 0.9,
               flexDirection: 'row',
               alignItems: 'center',
             }}>
             <Icon name='trail-sign' color={COLORS.themeColor}></Icon>
-            <Text style={{ marginLeft: 2, color: COLORS.themeColor }}>
+            <Text
+              style={{
+                marginLeft: 5,
+                color: COLORS.themeColor,
+                fontWeight: 'bold',
+              }}>
               {list.distance} km
             </Text>
           </View>
           <View
             style={{
-              flex: 0.4,
+              flex: 0.9,
               flexDirection: 'row',
               alignItems: 'center',
+              marginLeft: 8,
             }}>
-            <Icon name='md-pricetag' color={COLORS.black}></Icon>
-            <Text style={{ marginLeft: 4, color: COLORS.black }}>
-              {list.price.toLocaleString(2)}
+            <Icon name='wallet-outline' color={COLORS.black}></Icon>
+            <Text
+              style={{
+                marginLeft: 5,
+                color: COLORS.black,
+                fontWeight: 'bold',
+              }}>
+              {list.price === 'Free'
+                ? 'Free'
+                : Number(list.price).toLocaleString(2)}
             </Text>
           </View>
         </View>
