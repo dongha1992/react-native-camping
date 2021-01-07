@@ -7,8 +7,8 @@
 ![지도](https://user-images.githubusercontent.com/58624851/103226446-7c449900-496f-11eb-96bf-80cc322ba83a.png)
 
 ### 기술 스택
- - react natvie
- - google map
+ - react native
+ - redux
  
 
 
