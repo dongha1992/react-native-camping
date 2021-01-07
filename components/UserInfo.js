@@ -11,7 +11,8 @@ import {
 import { COLORS, FONTS, SIZES } from '../constants';
 import Icon from 'react-native-vector-icons/Ionicons';
 
-const UserInfo = ({ user }) => {
+const UserInfo = ({ user, userImage }) => {
+  console.log(userImage);
   return (
     <View
       style={{
@@ -21,9 +22,19 @@ const UserInfo = ({ user }) => {
         paddingHorizontal: SIZES.padding,
       }}>
       <View style={{ flex: 1 }}>
-        <View style={{ marginRight: SIZES.padding }}>
-          <Text style={{ ...FONTS.h3, color: COLORS.black }}>Good Morning</Text>
-          <Text style={{ ...FONTS.h2, color: COLORS.black }}>{user.name}</Text>
+        <View style={{ flex: 1, flexDirection: 'row', paddingTop: 15 }}>
+          <Image
+            source={{ uri: userImage }}
+            style={{ width: 50, height: 50, borderRadius: 10, marginRight: 10 }}
+          />
+          <View>
+            <Text style={{ ...FONTS.h3, color: COLORS.black }}>
+              Good Morning
+            </Text>
+            <Text style={{ ...FONTS.h2, color: COLORS.black }}>
+              {user.name}
+            </Text>
+          </View>
         </View>
       </View>
       <TouchableOpacity

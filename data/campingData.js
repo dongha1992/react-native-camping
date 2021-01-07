@@ -14,6 +14,10 @@ const campingData = [
       longitude: 127.05165,
     },
     bookmarked: false,
+
+    address: '서울시 성내동 554-2',
+    phone: '02-342-3445',
+    cooking: '불가',
   },
   {
     id: 2,
@@ -30,6 +34,10 @@ const campingData = [
       longitude: 127.05365,
     },
     bookmarked: false,
+
+    address: '서울시 성내동 554-2',
+    phone: '02-342-3445',
+    cooking: '불가',
   },
   {
     id: 3,
@@ -46,6 +54,10 @@ const campingData = [
       longitude: 127.05375,
     },
     bookmarked: false,
+
+    address: '서울시 성내동 554-2',
+    phone: '02-342-3445',
+    cooking: '불가',
   },
   {
     id: 4,
@@ -62,6 +74,11 @@ const campingData = [
       longitude: 127.05475,
     },
     bookmarked: false,
+    information: {
+      address: '서울시 성내동 554-2',
+      phone: '02-342-3445',
+      cooking: '불가',
+    },
   },
   {
     id: 5,
@@ -78,6 +95,10 @@ const campingData = [
       longitude: 127.05275,
     },
     bookmarked: false,
+
+    address: '서울시 성내동 554-2',
+    phone: '02-342-3445',
+    cooking: '불가',
   },
   {
     id: 6,
@@ -94,6 +115,10 @@ const campingData = [
       longitude: 127.04375,
     },
     bookmarked: false,
+
+    address: '서울시 성내동 554-2',
+    phone: '02-342-3445',
+    cooking: '불가',
   },
   {
     id: 7,
@@ -110,6 +135,10 @@ const campingData = [
       longitude: 127.04495,
     },
     bookmarked: false,
+
+    address: '서울시 성내동 554-2',
+    phone: '02-342-3445',
+    cooking: '불가',
   },
   {
     id: 8,
@@ -126,6 +155,10 @@ const campingData = [
       longitude: 127.05175,
     },
     bookmarked: false,
+
+    address: '서울시 성내동 554-2',
+    phone: '02-342-3445',
+    cooking: '불가',
   },
   {
     id: 9,
@@ -142,6 +175,10 @@ const campingData = [
       longitude: 127.05375,
     },
     bookmarked: false,
+
+    address: '서울시 성내동 554-2',
+    phone: '02-342-3445',
+    cooking: '불가',
   },
   {
     id: 10,
@@ -158,6 +195,10 @@ const campingData = [
       longitude: 127.05475,
     },
     bookmarked: false,
+
+    address: '서울시 성내동 554-2',
+    phone: '02-342-3445',
+    cooking: '불가',
   },
   {
     id: 11,
@@ -174,6 +215,47 @@ const campingData = [
       longitude: 127.04475,
     },
     bookmarked: false,
+    address: '서울시 성내동 554-2',
+    phone: '02-342-3445',
+    cooking: '불가',
+  },
+  {
+    id: 12,
+    type: 'tent',
+    name: '동사주의',
+    description: 'This is for all sunset lovers.',
+    rating: 2.5,
+    distance: 2.9,
+    price: 'Free',
+    image:
+      'https://www.thermarest.com/blog/wp-content/uploads/2018/08/second-edit.jpg',
+    latlng: {
+      latitude: 37.55437,
+      longitude: 127.02475,
+    },
+    bookmarked: false,
+    address: '서울시 성내동 554-2',
+    phone: '02-342-3445',
+    cooking: '불가',
+  },
+  {
+    id: 12,
+    type: 'tent',
+    name: '동사주의',
+    description: 'This is for all sunset lovers.',
+    rating: 2.5,
+    distance: 2.9,
+    price: '3500',
+    image:
+      'https://www.thermarest.com/blog/wp-content/uploads/2018/08/second-edit.jpg',
+    latlng: {
+      latitude: 37.55437,
+      longitude: 127.02475,
+    },
+    bookmarked: false,
+    address: '서울시 성내동 554-2',
+    phone: '02-342-3445',
+    cooking: '불가',
   },
 ];
 export { campingData };

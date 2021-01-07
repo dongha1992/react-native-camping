@@ -2,7 +2,7 @@ import { SELECTED_ID } from './types';
 import { SELECTED_TAP_TYPE } from './types';
 import { BOOKMARK_LIST } from './types';
 import { DELETE_BOOKMARK_LIST } from './types';
-import { CLICK_MARKER } from './types';
+import { GET_PHOTO } from './types';
 
 export const setSelectedId = (id) => {
   return {
@@ -32,9 +32,9 @@ export const setDeletedList = (list) => {
   };
 };
 
-export const setClickedMarker = (marker) => {
+export const setPhoto = (uri) => {
   return {
-    type: DELETE_BOOKMARK_LIST,
-    payload: marker,
+    type: GET_PHOTO,
+    payload: uri,
   };
 };

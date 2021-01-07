@@ -15,7 +15,7 @@ import Icon from 'react-native-vector-icons/Ionicons';
 
 const { width, height } = Dimensions.get('window');
 
-const CampingLists = ({ list, onPress, bookmark }) => {
+const CampingLists = ({ list, onPress, bookmark, clicked, targetId }) => {
   return (
     <View
       style={{
@@ -108,9 +108,9 @@ const CampingLists = ({ list, onPress, bookmark }) => {
           alignItems: 'center',
         }}>
         <Icon
-          name={list.bookmarked ? 'heart' : 'heart-outline'}
+          name={targetId == list.id && clicked ? 'heart' : 'heart-outline'}
           size={24}
-          color={list.bookmarked ? 'red' : 'black'}
+          color={targetId == list.id && clicked ? 'red' : 'black'}
           onPress={() => {
             onPress(list);
           }}

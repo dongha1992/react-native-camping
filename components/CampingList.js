@@ -22,6 +22,8 @@ const CampingList = ({ campingData }) => {
   const dispatch = useDispatch();
   const { bookmarkList } = useSelector((store) => store.MapReducer);
   const { filters } = useSelector((store) => store.MapReducer);
+  const [clicked, setCliked] = useState(false);
+  const [targetId, setTargetId] = useState('');
   const [lists, setList] = useState([]);
 
   useEffect(() => {
@@ -44,6 +46,8 @@ const CampingList = ({ campingData }) => {
       el.name == list.name ? { ...el, bookmarked: !el.bookmarked } : el
     );
     setList(editList);
+    setCliked(!clicked);
+    setTargetId(list.id);
   };
 
   const filterPriceList =
@@ -65,6 +69,8 @@ const CampingList = ({ campingData }) => {
           <CampingLists
             key={list.id}
             list={list}
+            clicked={clicked}
+            targetId={targetId}
             onPress={(list) => {
               onDispatchHandler(list);
               onHeartHandler(list);
